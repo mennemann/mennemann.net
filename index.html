@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="title" content="Marcin Mennemann">
+    <meta name="description" content="Hi, I'm Marcin, Computer science student at TU Dortmund. Welcome to my Website!">
     <meta name="keywords" content="Marcin, Mennemann">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -25,7 +26,7 @@
 
         <div id="header">
             <div id="profile">
-                <img id="pfp" src="./assets/pfp.jpg">
+                <img id="pfp" src="./assets/pfp.jpg" alt="profile picture">
                 <div class="flex-spacer"></div>
                 <h1 id="name">Marcin <br id="name_break">Mennemann</h1>
                 <h2 id="description">Computer science student at TU Dortmund, Germany</h2>
@@ -33,11 +34,11 @@
 
 
             <div id="socials">
-                <img src="./assets/email-white.svg" style="scale: 1.2;" onclick="show_mail()" />
-                <img src="./assets/x-logo-white.svg" onclick="newTab('https://x.com/mxrcin12')" />
-                <img src="./assets/discord-mark-white.svg"
+                <img src="./assets/email-white.svg" alt="email icon" style="scale: 1.2;" onclick="show_mail()" />
+                <img src="./assets/x-logo-white.svg" alt="twitter icon" onclick="newTab('https://x.com/mxrcin12')" />
+                <img src="./assets/discord-mark-white.svg" alt="discord icon"
                     onclick="newTab('https://discord.com/users/243402586349109248')" />
-                <img src="./assets/github-mark-white.svg" onclick="newTab('https://github.com/mennemann')" />
+                <img src="./assets/github-mark-white.svg" alt="github icon" onclick="newTab('https://github.com/mennemann')" />
             </div>
         </div>
 
@@ -131,12 +132,12 @@
                 <span class="popup_title">
                     Email Address
                 </span>
-                <img src="./assets/close.svg" style="margin-left: auto; scale: 0.9;" onclick="close_popup()">
+                <img src="./assets/close.svg" alt="close icon" style="margin-left: auto; scale: 0.9;" onclick="close_popup()">
             </div>
             <div class="line"></div>
             <div class="popup_content">
                 <input id="popup_email_field" type="text" value="marcinmennemann@gmail.com" readonly />
-                <img src="./assets/copy.png" class="copy_icon" onclick="copy_input_field('popup_email_field')" />
+                <img src="./assets/copy.png" alt="copy icon" class="copy_icon" onclick="copy_input_field('popup_email_field')" />
             </div>
         </div>
     </div>
