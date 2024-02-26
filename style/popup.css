@@ -1,0 +1,54 @@
+#popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.popup_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 15px;
+    transform: translate(-50%, -50%);
+    background: #1F1F1F;
+    padding: 10px;
+
+    min-width: 100px;
+    height: auto;
+}
+
+.popup_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.popup_title {
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.popup_content {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#popup_email_field {
+    width: 26ch;
+    background-color: #2F2F2F;
+    outline-color: white;
+    border: none;
+    border-bottom: 1px solid #888;
+    margin-right: 10px;
+    color: #fff;
+    padding: 6px;
+    font-size: 16px;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="title" content="Marcin Mennemann">
+    <meta name="keywords" content="Marcin, Mennemann">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+
+    <title>Hi, I'm Marcin</title>
+
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/popup.css">
+</head>
+
+<body>
+
+
+    <div id="content">
+
+        <div id="header">
+            <div id="profile">
+                <img id="pfp" src="./assets/pfp.jpg">
+                <div class="flex-spacer"></div>
+                <h1 id="name">Marcin <br id="name_break">Mennemann</h1>
+                <h2 id="description">Computer science student at TU Dortmund, Germany</h2>
+            </div>
+
+
+            <div id="socials">
+                <img src="./assets/email-white.svg" style="scale: 1.2;" onclick="show_mail()" />
+                <img src="./assets/x-logo-white.svg" onclick="newTab('https://x.com/mxrcin12')" />
+                <img src="./assets/discord-mark-white.svg"
+                    onclick="newTab('https://discord.com/users/243402586349109248')" />
+                <img src="./assets/github-mark-white.svg" onclick="newTab('https://github.com/mennemann')" />
+            </div>
+        </div>
+
+
+        <div class="line"></div>
+
+
+        <div>
+            <h3>About me 👋</h3>
+            <p>
+                Hi, I'm Marcin, a software engineer, product designer and solution architect. I am currently <span
+                    id="age"></span> years old and studying applied computer science.
+            </p>
+
+
+            <dl>
+                <dt>🎓</dt>
+                <dd>
+                    I have expertise in machine learning, web development and building cloud solutions
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>👀</dt>
+                <dd>
+                    Recently, I have also become interested in computer graphics, game design, cybersecurity, and DevOps
+                </dd>
+            </dl>
+
+
+
+            <h3>My favourite tools 💞️</h3>
+
+            <div id="tech-skills">
+                <span>&bull; 👨‍💻 <b>Programming Languages</b></span>
+                <span class="tech-skills-wrap">
+                    Python<br>
+                    JavaScript<br>
+                    C/C++<br>
+                    Java
+                </span>
+
+                <span>&bull; 📚 <b>Frameworks/Libraries</b></span>
+                <span class="tech-skills-wrap">
+                    TensorFlow/Keras<br>
+                    React
+                </span>
+
+                <span>&bull; ☁️ <b>Cloud Infrastructure</b></span>
+                <span class="tech-skills-wrap">
+                    Amazon Web Services<br>
+                    Firebase
+                </span>
+
+
+                <span>&bull; 🔥 <b>Other</b></span>
+                <span class="tech-skills-wrap">
+                    VS Code<br>
+                    Unity<br>
+                    node.js
+                </span>
+            </div>
+
+
+
+            <h3>Timeline 📅</h3>
+            <dl>
+                <dt><b>2021 - now</b>:&ensp;</dt>
+                <dd>Computer science student at TU Dortmund</dd>
+                <dd>2nd level support at Kostal</dd>
+            </dl>
+
+
+            <h3 id="contact">Contact me 📫</h3>
+            <p>
+                You can find my contact info by clicking on one of the buttons at the <span
+                    onclick="scroll_to_el('socials',70)" class="link">top of the page</span> :D
+            </p>
+        </div>
+
+        <div class="line" style="margin-top: 35px;"></div>
+        <div style="margin: 15px 0 0 auto;width:fit-content">&copy; Marcin Mennemann</div>
+    </div>
+
+
+
+    <!-- Replace with dialog-->
+    <div id="popup">
+        <div id="popup_box_email" class="popup_box">
+            <div class="popup_header">
+                <span class="popup_title">
+                    Email Address
+                </span>
+                <img src="./assets/close.svg" style="margin-left: auto; scale: 0.9;" onclick="close_popup()">
+            </div>
+            <div class="line"></div>
+            <div class="popup_content">
+                <input id="popup_email_field" type="text" value="marcinmennemann@gmail.com" readonly />
+                <img src="./assets/copy.png" class="copy_icon" onclick="copy_input_field('popup_email_field')" />
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js" defer></script>
+    <script>
+        window.onload = () => {
+            const birthday = new Date('07/12/2003')
+
+            document.getElementById('age').innerText = Math.abs((new Date(Date.now() - birthday.getTime())).getUTCFullYear() - 1970);
+        }
+    </script>
+</body>
+
+</html>
