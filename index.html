@@ -14,6 +14,8 @@
 
     <title>Hi, I'm Marcin</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/popup.css">
@@ -29,7 +31,7 @@
                 <img id="pfp" src="./assets/pfp.jpg" alt="profile picture">
                 <div class="flex-spacer"></div>
                 <h1 id="name">Marcin <br id="name_break">Mennemann</h1>
-                <h2 id="description">Computer science student at TU Dortmund, Germany</h2>
+                <h2 id="description"><span id="age"></span> years old</h2>
             </div>
 
 
@@ -47,62 +49,7 @@
 
 
         <div>
-            <h3>About me 👋</h3>
-            <p>
-                Hi, I'm Marcin, a software engineer, product designer and solution architect. I am currently <span
-                    id="age"></span> years old and studying applied computer science.
-            </p>
-
-
-            <dl>
-                <dt>🎓</dt>
-                <dd>
-                    I have expertise in machine learning, web development and building cloud solutions
-                </dd>
-            </dl>
-
-            <dl>
-                <dt>👀</dt>
-                <dd>
-                    Recently, I have also become interested in computer graphics, game design, cybersecurity, and DevOps
-                </dd>
-            </dl>
-
-
-
-            <h3>My favourite tools 💞️</h3>
-
-            <div id="tech-skills">
-                <span>&bull; 👨‍💻 <b>Programming Languages</b></span>
-                <span class="tech-skills-wrap">
-                    Python<br>
-                    JavaScript<br>
-                    C/C++<br>
-                    Java
-                </span>
-
-                <span>&bull; 📚 <b>Frameworks/Libraries</b></span>
-                <span class="tech-skills-wrap">
-                    TensorFlow/Keras<br>
-                    React
-                </span>
-
-                <span>&bull; ☁️ <b>Cloud Infrastructure</b></span>
-                <span class="tech-skills-wrap">
-                    Amazon Web Services<br>
-                    Firebase
-                </span>
-
-
-                <span>&bull; 🔥 <b>Other</b></span>
-                <span class="tech-skills-wrap">
-                    VS Code<br>
-                    Unity<br>
-                    node.js
-                </span>
-            </div>
-
-
+            <div id="markdown"></div>
 
             <h3>Timeline 📅</h3>
             <dl>
@@ -151,6 +98,10 @@
 
             document.getElementById('age').innerText = Math.abs((new Date(Date.now() - birthday.getTime())).getUTCFullYear() - 1970);
         }
+
+        fetch("https://raw.githubusercontent.com/mennemann/mennemann/main/README.md").then(res => res.text()).then(markdown => {
+            document.getElementById('markdown').innerHTML = marked.parse(markdown.split("<!-- GH-only -->")[0])
+        })
     </script>
 </body>
 
