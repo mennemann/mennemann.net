@@ -99,8 +99,8 @@
             document.getElementById('age').innerText = Math.abs((new Date(Date.now() - birthday.getTime())).getUTCFullYear() - 1970);
         }
 
-        fetch("https://raw.githubusercontent.com/mennemann/mennemann/main/README.md").then(res => res.text()).then(markdown => {
-            document.getElementById('markdown').innerHTML = marked.parse(markdown.split("<!-- GH-only -->")[0])
+        fetch("https://raw.githubusercontent.com/mennemann/mennemann.net/main/README.md").then(res => res.text()).then(markdown => {
+            document.getElementById('markdown').innerHTML = marked.parse(markdown)
         })
     </script>
 </body>
