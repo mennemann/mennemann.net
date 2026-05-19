@@ -1,28 +1,26 @@
 const popup = document.getElementById("popup");
 
-function newTab(url) {
-    window.open(url, "_blank").focus();
-}
+popup.addEventListener("click", (e) => {
+    if (e.target === popup) popup.close();
+});
 
 function show_mail() {
-    popup.style.display = "block";
+    popup.showModal();
 }
 
 function close_popup() {
-    popup.style.display = "none";
+    popup.close();
 }
 
 function copy_input_field(id) {
-    el = document.getElementById(id);
+    const el = document.getElementById(id);
     el.select();
     el.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(el.value);
 }
 
-function scroll_to_el(id, offset) {
-    el = document.getElementById(id);
-    window.scrollTo({
-        behavior: "smooth",
-        top: el.getBoundingClientRect().top - document.body.getBoundingClientRect().top - offset,
-    });
-}
+window.onload = () => {
+    const birthday = new Date("07/12/2003");
+
+    document.getElementById("age").innerText = Math.abs(new Date(Date.now() - birthday.getTime()).getUTCFullYear() - 1970);
+};

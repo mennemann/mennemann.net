@@ -4,16 +4,15 @@
     justify-content: space-between;
 }
 
-/* rework profile dumpfire with grid */
-
 #profile {
-    max-width: 75%;
-    height: 100px;
-
+    display: grid;
+    grid-template-columns: 100px auto;
+    column-gap: 15px;
     margin-bottom: 15px;
+}
 
+#profile-text {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
 }
@@ -21,8 +20,6 @@
 #pfp {
     height: 100px;
     width: 100px;
-    margin-right: 15px;
-
     border-radius: 50%;
     object-fit: cover;
 }
@@ -38,38 +35,39 @@
 #socials {
     height: 25px;
     margin-bottom: 15px;
+    scroll-margin-top: 70px;
 }
 
-#socials img {
+#socials a,
+#socials button {
     position: relative;
+    display: inline-block;
     height: inherit;
     margin-left: 10px;
-
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 0;
+    color: inherit;
     transition: top ease 0.1s;
 }
 
-#socials img:first-child {
+#socials a:first-child,
+#socials button:first-child {
     margin-left: 0;
 }
 
-#socials img:hover {
+#socials a:hover,
+#socials button:hover {
     top: -2px;
 }
 
+#socials img {
+    height: inherit;
+}
+
 @media screen and (max-width: 600px) {
-    #profile {
-        max-width: 100%;
-        height: auto;
-
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    #profile > .flex-spacer {
-        display: none;
-    }
-
     #name_break {
         display: block;
     }
@@ -80,7 +78,8 @@
         justify-content: space-between;
     }
 
-    #socials img:first-child {
+    #socials a:first-child,
+    #socials button:first-child {
         margin-left: 3px;
     }
 }

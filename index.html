@@ -11,9 +11,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
 
-        <title>Hi, I'm Marcin</title>
+        <meta property="og:title" content="Marcin Mennemann" />
+        <meta property="og:description" content="Hi, I'm Marcin, Computer science student at TU Dortmund. Welcome to my Website!" />
+        <meta property="og:image" content="https://mennemann.net/assets/pfp.jpg" />
+        <meta property="og:url" content="https://mennemann.net" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Marcin Mennemann" />
+        <meta name="twitter:description" content="Hi, I'm Marcin, Computer science student at TU Dortmund. Welcome to my Website!" />
+        <meta name="twitter:image" content="https://mennemann.net/assets/pfp.jpg" />
 
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <link rel="icon" href="/favicon.ico" />
+
+        <title>Hi, I'm Marcin</title>
 
         <link rel="stylesheet" href="style/style.css" />
         <link rel="stylesheet" href="style/header.css" />
@@ -21,51 +31,89 @@
     </head>
 
     <body>
-        <div id="content">
-            <div id="header">
+        <main id="content">
+            <header id="header">
                 <div id="profile">
                     <img id="pfp" src="./assets/pfp.jpg" alt="profile picture" />
-                    <div class="flex-spacer"></div>
-                    <h1 id="name">Marcin <br id="name_break" />Mennemann</h1>
-                    <h2 id="description"><span id="age"></span> years old</h2>
+                    <div id="profile-text">
+                        <h1 id="name">Marcin <br id="name_break" />Mennemann</h1>
+                        <h2 id="description"><span id="age"></span> years old</h2>
+                    </div>
                 </div>
 
                 <div id="socials">
-                    <img src="./assets/email-white.svg" alt="email icon" style="scale: 1.2" onclick="show_mail()" />
-                    <img src="./assets/x-logo-white.svg" alt="twitter icon" onclick="newTab('https://x.com/mxrcin12')" />
-                    <img src="./assets/discord-mark-white.svg" alt="discord icon" onclick="newTab('https://discord.com/users/243402586349109248')" />
-                    <img src="./assets/github-mark-white.svg" alt="github icon" onclick="newTab('https://github.com/mennemann')" />
+                    <button onclick="show_mail()" aria-label="Show email address">
+                        <img src="./assets/email-white.svg" alt="" style="scale: 1.2" />
+                    </button>
+                    <a href="https://x.com/mxrcin12" target="_blank" rel="noopener" aria-label="X / Twitter profile">
+                        <img src="./assets/x-logo-white.svg" alt="" />
+                    </a>
+                    <a href="https://discord.com/users/243402586349109248" target="_blank" rel="noopener" aria-label="Discord profile">
+                        <img src="./assets/discord-mark-white.svg" alt="" />
+                    </a>
+                    <a href="https://github.com/mennemann" target="_blank" rel="noopener" aria-label="GitHub profile">
+                        <img src="./assets/github-mark-white.svg" alt="" />
+                    </a>
                 </div>
-            </div>
+            </header>
 
             <div class="line"></div>
 
             <div>
-                <div id="markdown"></div>
+                <h3>Hello 👋</h3>
+                <p>
+                    Hi, I'm Marcin. I am a software engineer and currently studying applied computer science at
+                    <a href="https://tu-dortmund.de">TU Dortmund</a>.
+                </p>
+                <ul>
+                    <li>🎓 I mainly work on projects regarding machine learning, computer graphics, cloud computing and web development</li>
+                    <li>👀 Recently, I have also become interested in computational geometry, cybersecurity and game design</li>
+                </ul>
+
+                <h3>My favourite tools 💞️</h3>
+
+                <table>
+                    <tr>
+                        <td>💻 <b>Programming Languages</b><br />&nbsp;<br />&nbsp;</td>
+                        <td>Python<br />C++<br />JavaScript</td>
+                    </tr>
+                    <tr>
+                        <td>📚 <b>Frameworks / Libraries</b><br />&nbsp;<br />&nbsp;</td>
+                        <td>TensorFlow/Keras<br />CGAL<br />React/Next.js</td>
+                    </tr>
+                    <tr>
+                        <td>☁️ <b>Cloud Infrastructure</b><br />&nbsp;</td>
+                        <td>Amazon Web Services<br />Firebase</td>
+                    </tr>
+                    <tr>
+                        <td>🔥 <b>Other</b><br />&nbsp;</td>
+                        <td>Neovim, Arch, Git</td>
+                    </tr>
+                </table>
 
                 <h3>Timeline 📅</h3>
                 <dl>
                     <dt><b>2021 - now</b>:&ensp;</dt>
                     <dd>Computer science student at TU Dortmund</dd>
-                    <dd>2nd level support at Kostal</dd>
+                    <dd>2nd level support at Leopold Kostal GmbH & Co. KG</dd>
                 </dl>
 
                 <h3 id="contact">Contact me 📫</h3>
                 <p>
                     You can find my contact info by clicking on one of the buttons at the
-                    <span onclick="scroll_to_el('socials', 70)" class="link">top of the page</span> :D
+                    <a href="#socials" class="link">top of the page</a>
+                    :D
                 </p>
             </div>
 
             <div class="line" style="margin-top: 35px"></div>
-            <div style="margin: 15px 0 0 auto; width: fit-content">&copy; Marcin Mennemann</div>
-        </div>
+            <footer style="margin: 15px 0 0 auto; width: fit-content">&copy; Marcin Mennemann</footer>
+        </main>
 
-        <!-- Replace with dialog-->
-        <div id="popup">
+        <dialog id="popup">
             <div id="popup_box_email" class="popup_box">
                 <div class="popup_header">
-                    <span class="popup_title"> Email Address </span>
+                    <span class="popup_title">Email Address</span>
                     <img src="./assets/close.svg" alt="close icon" style="margin-left: auto; scale: 0.9" onclick="close_popup()" />
                 </div>
                 <div class="line"></div>
@@ -74,21 +122,8 @@
                     <img src="./assets/copy.png" alt="copy icon" class="copy_icon" onclick="copy_input_field('popup_email_field')" />
                 </div>
             </div>
-        </div>
+        </dialog>
 
         <script src="script.js" defer></script>
-        <script>
-            window.onload = () => {
-                const birthday = new Date("07/12/2003");
-
-                document.getElementById("age").innerText = Math.abs(new Date(Date.now() - birthday.getTime()).getUTCFullYear() - 1970);
-            };
-
-            fetch("https://raw.githubusercontent.com/mennemann/mennemann.net/main/README.md")
-                .then((res) => res.text())
-                .then((markdown) => {
-                    document.getElementById("markdown").innerHTML = marked.parse(markdown);
-                });
-        </script>
     </body>
 </html>
