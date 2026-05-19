@@ -4,7 +4,6 @@
     justify-content: space-between;
 }
 
-
 /* rework profile dumpfire with grid */
 
 #profile {
@@ -16,7 +15,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;    
+    justify-content: center;
 }
 
 #pfp {
@@ -28,15 +27,13 @@
     object-fit: cover;
 }
 
-#name_break{
+#name_break {
     display: none;
 }
 
 #description {
     margin-bottom: 0;
 }
-
-
 
 #socials {
     height: 25px;
@@ -59,10 +56,6 @@
     top: -2px;
 }
 
-
-
-
-
 @media screen and (max-width: 600px) {
     #profile {
         max-width: 100%;
@@ -76,11 +69,10 @@
     #profile > .flex-spacer {
         display: none;
     }
-    
-    #name_break{
+
+    #name_break {
         display: block;
     }
-
 
     #socials {
         width: 100%;

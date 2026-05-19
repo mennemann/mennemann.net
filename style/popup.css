@@ -16,7 +16,7 @@
     left: 50%;
     border-radius: 15px;
     transform: translate(-50%, -50%);
-    background: #1F1F1F;
+    background: #1f1f1f;
     padding: 10px;
 
     min-width: 100px;
@@ -43,7 +43,7 @@
 
 #popup_email_field {
     width: 26ch;
-    background-color: #2F2F2F;
+    background-color: #2f2f2f;
     outline-color: white;
     border: none;
     border-bottom: 1px solid #888;
